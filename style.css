@@ -56,10 +56,16 @@ footer {
     gap: 30px;
 }
 
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .profile-photo {
-    width: 140px;
-    height: 175px;
-    object-fit: cover;
+    width: 200px;
+    height: auto;
+    display: block;
     flex-shrink: 0;
 }
 
