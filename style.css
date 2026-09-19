@@ -1,82 +1,137 @@
+/* ---------- Basic page ---------- */
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 50px 40px;
     line-height: 1.7;
     color: #333;
+    background: #fff;
 }
 
-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 25px;
-    margin-bottom: 40px;
+
+/* ---------- Profile ---------- */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-bottom: 30px;
 }
 
-h1 {
-    margin-bottom: 5px;
+.profile-photo {
+    width: 150px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin: 0 0 8px 0;
     color: #222;
 }
 
-h2 {
-    margin-top: 40px;
-    color: #444;
+.profile-info p {
+    margin: 3px 0;
+    color: #555;
 }
 
+
+/* ---------- Navigation ---------- */
+
 nav {
-    margin-top: 25px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    margin-bottom: 45px;
 }
 
 nav a {
-    margin-right: 25px;
-    color: #555;
+    margin-right: 28px;
+    color: #365f91;
     text-decoration: none;
+    font-size: 0.95rem;
 }
 
 nav a:hover {
-    color: #000;
-    text-decoration: underline;
+    color: #222;
+}
+
+
+/* ---------- Main content ---------- */
+
+main {
+    max-width: 800px;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    color: #222;
+    margin-top: 42px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 18px;
 }
 
 a {
     color: #365f91;
 }
 
+a:hover {
+    color: #222;
+}
+
+
+/* ---------- Lists ---------- */
+
+ul {
+    padding-left: 25px;
+}
+
+
+/* ---------- Footer ---------- */
+
 footer {
-    margin-top: 60px;
+    margin-top: 70px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
     color: #777;
+    font-size: 0.9rem;
 }
 
-.profile-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-}
 
-.profile-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
+/* ---------- Mobile ---------- */
 
-.profile-photo {
-    width: 200px;
-    height: auto;
-    display: block;
-    flex-shrink: 0;
-}
+@media (max-width: 600px) {
 
-.profile-info {
-    flex: 1;
-}
+    body {
+        padding: 30px 20px;
+    }
 
-.profile-info h1 {
-    margin: 0 0 8px 0;
-}
+    .profile-header {
+        gap: 20px;
+    }
 
-.profile-info p {
-    margin: 3px 0;
+    .profile-photo {
+        width: 100px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-right: 18px;
+        margin-bottom: 5px;
+    }
 }
