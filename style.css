@@ -68,6 +68,21 @@ main {
     max-width: 800px;
 }
 
+
+/* Page title: Research, Teaching, Service, etc. */
+
+main > h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+
+/* Section headings: Journal Articles, Editorial Board, etc. */
+
 h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.65rem;
@@ -76,6 +91,9 @@ h2 {
     margin-top: 42px;
     margin-bottom: 15px;
 }
+
+
+/* ---------- Text ---------- */
 
 p {
     margin-top: 0;
@@ -98,6 +116,17 @@ ul {
 }
 
 
+/* ---------- Service ---------- */
+
+.service-item {
+    margin-bottom: 25px;
+}
+
+.service-item p {
+    margin-bottom: 0;
+}
+
+
 /* ---------- Footer ---------- */
 
 footer {
@@ -108,16 +137,6 @@ footer {
     font-size: 0.9rem;
 }
 
-
-/* ---------- Service ---------- */
-
-.service-item {
-    margin-bottom: 25px;
-}
-
-.service-item p {
-    margin-bottom: 0;
-}
 
 /* ---------- Mobile ---------- */
 
@@ -144,4 +163,5 @@ footer {
         margin-right: 18px;
         margin-bottom: 5px;
     }
+
 }
