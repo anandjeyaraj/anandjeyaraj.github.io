@@ -49,10 +49,23 @@ footer {
     color: #777;
 }
 
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .profile-photo {
-    width: 120px;
-    height: 150px;
+    width: 140px;
+    height: 175px;
     object-fit: cover;
-    display: block;
-    margin-bottom: 25px;
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    margin: 0 0 8px 0;
+}
+
+.profile-info p {
+    margin: 3px 0;
 }
