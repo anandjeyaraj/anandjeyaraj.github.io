@@ -6,8 +6,8 @@ body {
     margin: 0 auto;
     padding: 50px 40px;
     line-height: 1.7;
-    color: #333;
-    background: #fff;
+    color: #333333;
+    background: #ffffff;
 }
 
 
@@ -32,33 +32,34 @@ body {
     font-size: 2.4rem;
     font-weight: normal;
     margin: 0 0 8px 0;
-    color: #222;
+    color: #174A3A;
 }
 
 .profile-info p {
     margin: 3px 0;
-    color: #555;
+    color: #555555;
 }
 
 
 /* ---------- Navigation ---------- */
 
 nav {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #D9DED9;
+    border-bottom: 3px solid #B08D2C;
     padding: 12px 0;
     margin-bottom: 45px;
 }
 
 nav a {
     margin-right: 28px;
-    color: #365f91;
+    color: #174A3A;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #222;
+    color: #B08D2C;
 }
 
 
@@ -69,27 +70,29 @@ main {
 }
 
 
-/* Page title: Research, Teaching, Service, etc. */
+/* Page title */
 
 main > h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 2rem;
     font-weight: normal;
-    color: #222;
+    color: #174A3A;
     margin-top: 0;
     margin-bottom: 30px;
 }
 
 
-/* Section headings: Journal Articles, Editorial Board, etc. */
+/* Section headings */
 
 h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.65rem;
     font-weight: normal;
-    color: #222;
+    color: #174A3A;
     margin-top: 42px;
     margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D9DED9;
 }
 
 
@@ -101,11 +104,11 @@ p {
 }
 
 a {
-    color: #365f91;
+    color: #174A3A;
 }
 
 a:hover {
-    color: #222;
+    color: #B08D2C;
 }
 
 
@@ -113,6 +116,10 @@ a:hover {
 
 ul {
     padding-left: 25px;
+}
+
+li::marker {
+    color: #B08D2C;
 }
 
 
@@ -132,8 +139,8 @@ ul {
 footer {
     margin-top: 70px;
     padding-top: 20px;
-    border-top: 1px solid #ddd;
-    color: #777;
+    border-top: 1px solid #D9DED9;
+    color: #777777;
     font-size: 0.9rem;
 }
 
