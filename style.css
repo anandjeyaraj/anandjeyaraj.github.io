@@ -50,8 +50,8 @@ footer {
 }
 
 .profile-photo {
-    width: 180px;
-    height: 220px;
+    width: 120px;
+    height: 150px;
     object-fit: cover;
     display: block;
     margin-bottom: 25px;
