@@ -109,6 +109,16 @@ footer {
 }
 
 
+/* ---------- Service ---------- */
+
+.service-item {
+    margin-bottom: 25px;
+}
+
+.service-item p {
+    margin-bottom: 0;
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 600px) {
