@@ -156,57 +156,53 @@ def parse_fields(body):
 
 def format_authors(author_field):
 
-authors = re.split(r"\s+and\s+", author_field.strip())
+    authors = re.split(r"\s+and\s+", author_field.strip())
 
-formatted = []
+    formatted = []
 
-for author in authors:
+    for author in authors:
 
-    if "," in author:
+        if "," in author:
+            last, first = [
+                x.strip()
+                for x in author.split(",", 1)
+            ]
+        else:
+            parts = author.split()
+            last = parts[-1]
+            first = " ".join(parts[:-1])
 
-        last, first = [
-            x.strip()
-            for x in author.split(",", 1)
-        ]
+        initials = []
 
-    else:
+        for part in first.replace("-", " ").split():
+            if part:
+                initials.append(
+                    part[0].upper() + "."
+                )
 
-        parts = author.split()
-        last = parts[-1]
-        first = " ".join(parts[:-1])
+        if initials:
+            name = f"{last}, {' '.join(initials)}"
+        else:
+            name = last
 
-    initials = []
+        if last.lower() == "jeyaraj":
+            name = f"<strong>{html.escape(name)}</strong>"
+        else:
+            name = html.escape(name)
 
-    for part in first.replace("-", " ").split():
+        formatted.append(name)
 
-        if part:
-            initials.append(
-                part[0].upper() + "."
-            )
+    if len(formatted) == 1:
+        return formatted[0]
 
-    if initials:
-        name = f"{last}, {' '.join(initials)}"
-    else:
-        name = last
+    if len(formatted) == 2:
+        return f"{formatted[0]}, & {formatted[1]}"
 
-    if last.lower() == "jeyaraj":
-        name = f"<strong>{html.escape(name)}</strong>"
-    else:
-        name = html.escape(name)
-
-    formatted.append(name)
-
-if len(formatted) == 1:
-    return formatted[0]
-
-if len(formatted) == 2:
-    return f"{formatted[0]}, & {formatted[1]}"
-
-return (
-    ", ".join(formatted[:-1])
-    + ", & "
-    + formatted[-1]
-)
+    return (
+        ", ".join(formatted[:-1])
+        + ", & "
+        + formatted[-1]
+    )
 
 
 def link(url):
