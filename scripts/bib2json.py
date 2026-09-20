@@ -152,7 +152,6 @@ def parse_fields(body):
         fields[name] = clean(value)
 
     return key, fields
-}
 
 
 def format_authors(author_field):
