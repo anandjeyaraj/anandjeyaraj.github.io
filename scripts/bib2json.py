@@ -218,7 +218,7 @@ def link(url):
 def format_article(fields):
 
     text = (
-        f"<strong>{html.escape(format_authors(fields.get('author', '')))}</strong>"
+        f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
         f"{html.escape(fields.get('title', ''))}. "
     )
@@ -258,7 +258,7 @@ def format_article(fields):
 def format_proceedings(fields):
 
     text = (
-        f"<strong>{html.escape(format_authors(fields.get('author', '')))}</strong>"
+        f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
         f"{html.escape(fields.get('title', ''))}. "
     )
@@ -288,7 +288,7 @@ def format_proceedings(fields):
 def format_book_chapter(fields):
 
     text = (
-        f"<strong>{html.escape(format_authors(fields.get('author', '')))}</strong>"
+        f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
         f"{html.escape(fields.get('title', ''))}. "
     )
@@ -313,7 +313,7 @@ def format_book_chapter(fields):
 def format_conference_presentation(fields):
 
     text = (
-        f"<strong>{html.escape(format_authors(fields.get('author', '')))}</strong>"
+        f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
         f"{html.escape(fields.get('title', ''))}. "
     )
@@ -336,7 +336,7 @@ def format_conference_presentation(fields):
 def format_editorial(fields):
 
     text = (
-        f"<strong>{html.escape(format_authors(fields.get('author', '')))}</strong>"
+        f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
         f"{html.escape(fields.get('title', ''))}. "
     )
