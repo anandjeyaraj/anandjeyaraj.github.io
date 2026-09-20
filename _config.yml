@@ -1,6 +1,9 @@
+plugins:
+  - jekyll/scholar
+
 scholar:
   style: apa
   source: .
-  bibliography: publications
+  bibliography: publications.bib
   sort_by: year
   order: descending
