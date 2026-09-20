@@ -1,4 +1,6 @@
 scholar:
   style: apa
+  source: .
+  bibliography: publications
   sort_by: year
   order: descending
