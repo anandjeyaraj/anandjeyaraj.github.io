@@ -134,6 +134,17 @@ li::marker {
 }
 
 
+/* ---------- Teaching ---------- */
+
+.teaching-item {
+    margin-bottom: 25px;
+}
+
+.teaching-item p {
+    margin-bottom: 0;
+}
+
+
 /* ---------- Footer ---------- */
 
 footer {
