@@ -18,11 +18,11 @@ CATEGORY_MAP = {
 }
 
 CATEGORY_ORDER = [
-    "JOURNAL ARTICLES",
-    "CONFERENCE PROCEEDINGS",
-    "BOOK CHAPTERS",
-    "CONFERENCE PRESENTATIONS",
-    "GUEST EDITORIALS",
+    "Journal Articles",
+    "Conference Proceedings",
+    "Book Chapters",
+    "Conference Presentations",
+    "Guest Editorials",
 ]
 
 
