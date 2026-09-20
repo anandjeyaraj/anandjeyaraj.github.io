@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Anand Jeyaraj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="profile-header">
+        <img src="profile.jpg" alt="Your Name" class="profile-photo">
+
+        <div class="profile-info">
+            <h1>Anand Jeyaraj</h1>
+            <p>Professor of Information Systems | Raj Soin College of Business | Wright State University</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="service.html">Service</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Research</h1>
+
+    <section>
+        <h2>Journal Articles</h2>
+
+        {% bibliography --query @article %}
+
+    </section>
+
+    <section>
+
+        <h2>Conference Proceedings</h2>
+
+        {% bibliography --query @inproceedings %}
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Anand Jeyaraj</p>
+</footer>
+
+</body>
+</html>
