@@ -10,11 +10,11 @@ START = "<!-- PUBLICATIONS START -->"
 END = "<!-- PUBLICATIONS END -->"
 
 CATEGORY_MAP = {
-    "article": "JOURNAL ARTICLES",
-    "inproceedings": "CONFERENCE PROCEEDINGS",
-    "incollection": "BOOK CHAPTERS",
-    "confpres": "CONFERENCE PRESENTATIONS",
-    "editorial": "GUEST EDITORIALS",
+    "article": "Journal Articles",
+    "inproceedings": "Conference Proceedings",
+    "incollection": "Book Chapters",
+    "confpres": "Conference Presentations",
+    "editorial": "Guest Editorials",
 }
 
 CATEGORY_ORDER = [
