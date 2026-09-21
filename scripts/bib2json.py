@@ -426,10 +426,9 @@ def main():
         if category not in sections:
             continue
 
-        output.append(
-            f"<h2>{category}</h2>"
-        )
-
+        section_id = category.lower().replace(" ", "-")
+        output.append(f'<h2 id="{section_id}">{category}</h2>')
+        
         by_year = defaultdict(list)
 
         for publication in sections[category]:
