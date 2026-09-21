@@ -170,6 +170,17 @@ li::marker {
 }
 
 
+/* ---------- Teaching ---------- */
+
+.teaching-item {
+    margin-bottom: 25px;
+}
+
+.teaching-item p {
+    margin-bottom: 0;
+}
+
+
 /* ---------- Service ---------- */
 
 .service-item {
@@ -181,13 +192,13 @@ li::marker {
 }
 
 
-/* ---------- Teaching ---------- */
+/* ---------- Recognition ---------- */
 
-.teaching-item {
+.recognition-item {
     margin-bottom: 25px;
 }
 
-.teaching-item p {
+.recognition-item p {
     margin-bottom: 0;
 }
 
