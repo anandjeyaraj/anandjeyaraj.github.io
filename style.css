@@ -82,6 +82,24 @@ main > h1 {
 }
 
 
+/* Research page navigation */
+
+.research-links {
+    font-size: 0.85rem;
+    margin-top: -18px;
+    margin-bottom: 25px;
+}
+
+.research-links a {
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.research-links a:hover {
+    color: #B08D2C;
+}
+
+
 /* Section headings */
 
 h2 {
