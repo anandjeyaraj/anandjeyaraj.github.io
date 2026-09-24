@@ -203,6 +203,21 @@ li::marker {
 }
 
 
+/* ---------- Media ---------- */
+
+.media-item {
+    margin-bottom: 25px;
+}
+
+.media-item p {
+    margin-bottom: 0;
+}
+
+.media-item a {
+    text-decoration: none;
+}
+
+
 /* ---------- Footer ---------- */
 
 footer {
