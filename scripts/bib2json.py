@@ -205,14 +205,16 @@ def format_authors(author_field):
     )
 
 
-def link(url):
+def link(title, url):
+
+    safe_title = html.escape(title)
 
     if not url:
-        return ""
+        return safe_title
 
     safe_url = html.escape(url, quote=True)
 
-    return f' <a href="{safe_url}">Link</a>'
+    return f'<a href="{safe_url}">{safe_title}</a>'
 
 
 def format_article(fields):
@@ -220,7 +222,7 @@ def format_article(fields):
     text = (
         f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
-        f"{html.escape(fields.get('title', ''))}. "
+        f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
     journal = fields.get("journal", "")
@@ -250,8 +252,6 @@ def format_article(fields):
     if note:
         text += f" {html.escape(note)}."
 
-    text += link(fields.get("url", ""))
-
     return text
 
 
@@ -260,7 +260,7 @@ def format_proceedings(fields):
     text = (
         f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
-        f"{html.escape(fields.get('title', ''))}. "
+        f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
     booktitle = fields.get("booktitle", "")
@@ -280,8 +280,6 @@ def format_proceedings(fields):
 
     text += "."
 
-    text += link(fields.get("url", ""))
-
     return text
 
 
@@ -290,7 +288,7 @@ def format_book_chapter(fields):
     text = (
         f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
-        f"{html.escape(fields.get('title', ''))}. "
+        f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
     booktitle = fields.get("booktitle", "")
@@ -305,8 +303,6 @@ def format_book_chapter(fields):
 
     text += "."
 
-    text += link(fields.get("url", ""))
-
     return text
 
 
@@ -315,7 +311,7 @@ def format_conference_presentation(fields):
     text = (
         f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
-        f"{html.escape(fields.get('title', ''))}. "
+        f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
     booktitle = fields.get("booktitle", "")
@@ -338,7 +334,7 @@ def format_editorial(fields):
     text = (
         f"{format_authors(fields.get('author', ''))}"
         f" ({html.escape(fields.get('year', ''))}). "
-        f"{html.escape(fields.get('title', ''))}. "
+        f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
     journal = fields.get("journal", "")
@@ -352,8 +348,6 @@ def format_editorial(fields):
         text += f", {html.escape(pages)}"
 
     text += "."
-
-    text += link(fields.get("url", ""))
 
     return text
 
@@ -427,8 +421,11 @@ def main():
             continue
 
         section_id = category.lower().replace(" ", "-")
-        output.append(f'<h2 id="{section_id}">{category}</h2>')
-        
+
+        output.append(
+            f'<h2 id="{section_id}">{category}</h2>'
+        )
+
         by_year = defaultdict(list)
 
         for publication in sections[category]:
