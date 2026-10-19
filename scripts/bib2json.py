@@ -14,7 +14,7 @@ CATEGORY_MAP = {
     "inproceedings": "Conference Proceedings",
     "incollection": "Book Chapters",
     "confpres": "Conference Presentations",
-    "editorial": "Guest Editorials",
+    "techreport": "Technical Reports",
 }
 
 CATEGORY_ORDER = [
@@ -22,7 +22,7 @@ CATEGORY_ORDER = [
     "Conference Proceedings",
     "Book Chapters",
     "Conference Presentations",
-    "Guest Editorials",
+    "Technical Reports",
 ]
 
 
@@ -329,7 +329,7 @@ def format_conference_presentation(fields):
     return text
 
 
-def format_editorial(fields):
+def format_technical_report(fields):
 
     text = (
         f"{format_authors(fields.get('author', ''))}"
@@ -337,17 +337,31 @@ def format_editorial(fields):
         f"{link(fields.get('title', ''), fields.get('url', ''))}. "
     )
 
-    journal = fields.get("journal", "")
+    institution = fields.get("institution", "")
 
-    if journal:
-        text += f"<em>{html.escape(journal)}</em>"
+    if institution:
+        text += f"<em>{html.escape(institution)}</em>"
 
-    pages = fields.get("pages", "")
+    number = fields.get("number", "")
 
-    if pages:
-        text += f", {html.escape(pages)}"
+    if number:
+        if institution:
+            text += ", "
+        text += html.escape(number)
+
+    address = fields.get("address", "")
+
+    if address:
+        if institution or number:
+            text += ", "
+        text += html.escape(address)
 
     text += "."
+
+    note = fields.get("note", "")
+
+    if note:
+        text += f" {html.escape(note)}."
 
     return text
 
@@ -366,8 +380,8 @@ def format_citation(entry_type, fields):
     if entry_type == "confpres":
         return format_conference_presentation(fields)
 
-    if entry_type == "editorial":
-        return format_editorial(fields)
+    if entry_type == "techreport":
+        return format_technical_report(fields)
 
     return ""
 
